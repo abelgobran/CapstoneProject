@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity //tell spring that is a pojo and needs to be saved in database...entity bean
-@Table(name="cars")// Telling spring boot that table with name people should be mapped with with person pojo, saved
+//@Table(name="car")// Telling spring boot that table with name people should be mapped with with person pojo, saved
 //as record in people table
 public class Car {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	@Column(name="year")
 	private int year;
 	@Column(name="make")
@@ -35,10 +35,10 @@ public class Car {
 		this.model = model;
 		this.type = type;
 	}
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public int getYear() {
